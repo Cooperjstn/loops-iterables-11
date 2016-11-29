@@ -3,9 +3,13 @@
 //Write a function that calculates the sum of all the numbers in an array
 
 var sumOfArray = function (totalArray) {
-  for (i =0; i < sumOfArray.length[i]; i++);
-    var sum = 0;
-    return sum;
+  var numAdd = 0
+  var sumSum = 0
+  for (i =0; i < totalArray.length; i++){
+    numAdd = totalArray[i]
+    totalSum = sumSum + numAdd;
+  }
+    return sumSum
 }
 
 console.assert(sumOfArray([3, 4]) === 7);
@@ -18,12 +22,18 @@ console.assert(sumOfArray([10, 9, 8, 3, 4, 5, 6]) === 45);
 // Write a function maxOfArray() that takes an array of
 // numbers as an argument and finds the highest number.
 
-var array = [2,4,3];
-var highest=0;
-for (i=0; i < highest; i++) {
-  if (array[i] > highest) {
-    var highest=array[i];
-  }
+var maxOfarray = function (arrMaximum) {
+  var newNum = 0;
+  var maxNum = null
+  for (var i = 0; i < arrMaximum.length; i++){
+    newNum = arrMaximum[i]
+    if (newNum > maxNum){
+      maxNum = newNum
+    }
+    else if (typeof newNum != 'number'){
+      return null
+    } else {}
+  } return maxNum
 }
 
 
@@ -38,13 +48,15 @@ console.assert( maxOfArray([1,8,'bucklemyshoe', 7] === null ) )
 
 
 function isVowel(character){
-    var vowel = ["a","e","i","o","u", "A","E","I","O","U"];
-    for (var i= 0; i < vowel.length; i++)
-    if (character ===vowel[i]){
-      return true;
-    }else{
-}return false;
-}
+    var vowel = ["a","e","i","o","u", "A","E","I","O","U"]
+    var judgeVowel = false
+    if (typeof character === 'string'){
+      for (var i=0; i < vowel.length; i++){
+        if (character.toLowerCase() === vowel[i]){
+          judgeVowel = true
+        }
+      }
+    }
 
 console.assert(isVowel(0) === false);
 console.assert(isVowel("B") === false);
@@ -61,13 +73,12 @@ console.assert(isVowel("E") === true);
  // reverse("skoob") should return the
  // string "books".
  ///
-var reVersal =function(){
- var revRev = function reverse(str){
-     return str.split("").reverse().join("");
- }
-  var runRev= function runitBack (str) {
-    return str.split("").reverse().join("");
-  }
+var reversal =function(){
+ var revrev = ""
+  var statArr = str.split("")
+  statArr = statArr.reverse()
+  revrev = statArr.join ("")
+  return revrev
 }
 
 console.assert(reverse("books") === "skoob")
@@ -84,6 +95,24 @@ console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew
  // - for every number that is a multiple of 3 and 5, return "FizZBuzZ"
  ///
 
+var fizzbuzz = function (number){
+  var fizz = ""
+  for (var i =1; i <= number; i++){
+    if (i % 3 != 0 && i % 5 != 0){
+      fizz = fizz +'.'
+    }
+    if (i % 3 === 0 && i % 5 != 0){
+      fizz = fizz +"fizz"
+
+    } else if (i% 5 === 0 && i % 3 != 0){
+      fizz = fizz +"buzz"
+    } else if (i % 3 === 0 && i % 5 === 0) {
+      fizz = fizz +"FizZBuzZ"
+    }
+
+  }
+  return fizz
+}
 
 
 
