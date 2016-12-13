@@ -7,7 +7,7 @@ var sumOfArray = function (totalArray) {
   var sumSum = 0
   for (i =0; i < totalArray.length; i++){
     numAdd = totalArray[i]
-    totalSum = sumSum + numAdd;
+    sumSum = sumSum + numAdd;
   }
     return sumSum
 }
@@ -22,7 +22,7 @@ console.assert(sumOfArray([10, 9, 8, 3, 4, 5, 6]) === 45);
 // Write a function maxOfArray() that takes an array of
 // numbers as an argument and finds the highest number.
 
-var maxOfarray = function (arrMaximum) {
+var maxOfArray = function (arrMaximum) {
   var newNum = 0;
   var maxNum = null
   for (var i = 0; i < arrMaximum.length; i++){
@@ -37,9 +37,9 @@ var maxOfarray = function (arrMaximum) {
 }
 
 
-console.assert( maxOfArray([2,4,3]) === 4)
-console.assert( maxOfArray([10,9,8,100,7,6]) === 100)
-console.assert( maxOfArray([1,8,'bucklemyshoe', 7] === null ) )
+console.assert(maxOfArray([2,4,3]) === 4)
+console.assert(maxOfArray([10,9,8,100,7,6]) === 100)
+console.assert(maxOfArray([1,8,'bucklemyshoe', 7] === null ) )
 
 //PART 2
 
@@ -56,7 +56,8 @@ function isVowel(character){
           judgeVowel = true
         }
       }
-    }
+    } return judgeVowel
+  }
 
 console.assert(isVowel(0) === false);
 console.assert(isVowel("B") === false);
@@ -65,21 +66,24 @@ console.assert(isVowel("a") === true);
 console.assert(isVowel("E") === true);
 
 
-///
- // Part 3
- //
- // Define a function reverse() that computes
- // the reversal of a string. For example,
- // reverse("skoob") should return the
- // string "books".
- ///
-var reversal =function(){
- var revrev = ""
-  var statArr = str.split("")
-  statArr = statArr.reverse()
-  revrev = statArr.join ("")
-  return revrev
-}
+/
+ Part 3
+
+ Define a function reverse() that computes
+ the reversal of a string. For example,
+ reverse("skoob") should return the
+ string "books".
+ /
+var reverse =function(str){
+
+ var newStr = ""
+
+ for (var i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+   }
+   return newStr;
+
+    }
 
 console.assert(reverse("books") === "skoob")
 console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew")
@@ -154,7 +158,7 @@ console.assert(findLongestWord("don't mess with Texas") === "Texas")
 
 
 
-console.assert(GCD(5,1) === 1);
-console.assert(GCD(15,3) === 3);
-console.assert(GCD(15,5) === 5);
-console.assert(GCD(50,20) === 10);
+console.assert(GCD(5,1) === 1)
+console.assert(GCD(15,3) === 3)
+console.assert(GCD(15,5) === 5)
+console.assert(GCD(50,20) === 10)
