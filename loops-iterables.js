@@ -5,7 +5,7 @@
 var sumOfArray = function (totalArray) {
   var numAdd = 0
   var sumSum = 0
-  for (i =0; i < totalArray.length; i++){
+  for (var i =0; i < totalArray.length; i++){
     numAdd = totalArray[i]
     sumSum = sumSum + numAdd;
   }
@@ -32,8 +32,8 @@ var maxOfArray = function (arrMaximum) {
     }
     else if (typeof newNum != 'number'){
       return null
-    } else {}
-  } return maxNum
+    } else
+   return maxNum
 }
 
 
@@ -47,16 +47,17 @@ console.assert(maxOfArray([1,8,'bucklemyshoe', 7] === null ) )
 //and returns true if it is a vowel, false otherwise.
 
 
-function isVowel(character){
-    var vowel = ["a","e","i","o","u", "A","E","I","O","U"]
+function isVowel(chara){
+    var vowel = ['a', 'e', 'i', 'o', 'u']
     var judgeVowel = false
-    if (typeof character === 'string'){
+    if (typeof chara === 'string'){
       for (var i=0; i < vowel.length; i++){
-        if (character.toLowerCase() === vowel[i]){
+        if (chara.toLowerCase() === vowel[i]){
           judgeVowel = true
         }
       }
-    } return judgeVowel
+    }
+    return judgeVowel;
   }
 
 console.assert(isVowel(0) === false);
@@ -66,24 +67,25 @@ console.assert(isVowel("a") === true);
 console.assert(isVowel("E") === true);
 
 
-/
- Part 3
+ // Part 3
+ //
+ // Define a function reverse() that computes
+ // the reversal of a string. For example,
+ // reverse("skoob") should return the
+ // string "books".
 
- Define a function reverse() that computes
- the reversal of a string. For example,
- reverse("skoob") should return the
- string "books".
- /
-var reverse =function(str){
+ var reverse = function(str){
 
- var newStr = ""
+   var revstr = ""
 
- for (var i = str.length - 1; i >= 0; i--) {
-    newStr += str[i];
-   }
-   return newStr;
+   var strArr = str.split ("")
 
-    }
+   strArr = strArr.reverse ()
+
+   revstr = strArr.join ("")
+
+   return revstr
+ }
 
 console.assert(reverse("books") === "skoob")
 console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew")
@@ -99,9 +101,9 @@ console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew
  // - for every number that is a multiple of 3 and 5, return "FizZBuzZ"
  ///
 
-var fizzbuzz = function (number){
+var fizzbuzz = function (num){
   var fizz = ""
-  for (var i =1; i <= number; i++){
+  for (var i =1; i <= num; i++){
     if (i % 3 != 0 && i % 5 != 0){
       fizz = fizz +'.'
     }
@@ -136,12 +138,34 @@ console.assert(fizzbuzz(20) === "..fizz.buzzfizz..fizzbuzz.fizz..FizZBuzZ..fizz.
  ///
 
  function findLongestWord(sent) {
-     var sentSplit = sent.split(' ');
+     var sentSplit = sent.split("");
      var longestWord = 0;
+     var longSent = "";
+     var sentComp
      for(var i = 0; i < sentSplit.length; i++){
-     if(sentSplit[i].length > longestWord)
- 	longestWord = sentSplit[i].length;
+
+     sentSplit [i] = remWork (sentSplit [i])
+ 	   sentComp = sentSplit[i].length
+
+     if (sentComp > longestWord) {
+       longestWord = sentComp
+       longSent = sentSplit [i]
+     }
  }
+ return longSent
+ }
+
+ var remWork = function (str){
+   var remSent = 0;
+   var retStr = ""
+   for (var i=0; i < str.length; i++){
+     if (str [i] === ""){
+       remSent = remSent + 1
+     }else{
+       retStr = retStr + str [i]
+       }
+   }
+  return retStr
  }
 
 console.assert(findLongestWord("a book full of dogs") === "book")
